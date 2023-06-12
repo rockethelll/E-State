@@ -53,3 +53,7 @@ gem "rack-cors", "~> 2.0"
 gem "rubocop", "~> 1.52"
 
 gem "jsonapi-serializer", "~> 2.2"
+
+gem "rspec-rails", "~> 6.0"
+
+gem "table_print", "~> 1.5"
