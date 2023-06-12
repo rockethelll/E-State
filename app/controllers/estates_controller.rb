@@ -1,5 +1,5 @@
 class EstatesController < ApplicationController
-  before_action :set_estate, only: %i[ show update destroy ]
+  before_action :set_estate, only: %i[show update destroy]
 
   def index
     @estates = Estate.all
@@ -35,11 +35,11 @@ class EstatesController < ApplicationController
 
   private
 
-    def set_estate
-      @estate = Estate.find(params[:id])
-    end
+  def set_estate
+    @estate = Estate.find(params[:id])
+  end
 
-    def estate_params
-      params.require(:estate).permit(:title, :price, :description, :area, :rooms, :furnished)
-    end
+  def estate_params
+    params.require(:estate).permit(:title, :price, :description, :area, :rooms, :furnished)
+  end
 end
