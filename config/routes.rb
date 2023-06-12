@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  resources :estates
   get '/current_user', to: 'current_user#index'
   devise_for :users,
              path: '',
