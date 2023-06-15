@@ -1,5 +1,6 @@
 class EstatesController < ApplicationController
   before_action :set_estate, only: %i[show update destroy]
+  before_action :authenticate_user!, only: %i[create update destroy]
 
   def index
     @estates = Estate.all
@@ -13,6 +14,7 @@ class EstatesController < ApplicationController
 
   def create
     @estate = Estate.new(estate_params)
+    @estate.user = current_user
 
     if @estate.save
       render json: @estate, status: :created, location: @estate
